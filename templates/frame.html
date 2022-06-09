@@ -8,13 +8,13 @@
 {% block title %}Olimpiadas Programación 2022{% endblock title %}
 
 {% block content %}
-
-<div class="content container w-100 h-100 d-flex flex-column align-items-center justify-content-center">
-    <h1 clas="">Ayudante Electoral</h2>
-    <img class="frame1-logo" src="{% static 'img/frame1.jpeg' %}" alt="">
-    <a class="btn btn-primary mt-2" href="{% url 'candidatos:opciones' %}">Ingresar</a>
+<div class="main">
+    <div class="content container w-100 d-flex flex-column align-items-center justify-content-center" style="align-items: center !important; height: 100vh">
+        <h1 style="color:white;">Ayudante Electoral</h2>
+        <img class="frame1-logo" src="{% static 'img/frame1.png' %}" alt="">
+        <a class="btn btn-primary mt-2" href="{% url 'candidatos:opciones' %}">Ingresar</a>
+    </div>
 </div>
-
 {% endblock content %}
 
 {% block js %}
