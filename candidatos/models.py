@@ -11,9 +11,10 @@ class CandidatoPresidente(models.Model):
     apellidos = models.CharField(max_length=100)
     edad = models.IntegerField()
     cedula = models.CharField(max_length=10)
-    votos = models.IntegerField()
+    votos = models.IntegerField(null=True, blank=True, default=0)
     profesion = models.CharField(max_length=100)
     partido = models.CharField(max_length=100)
+    url = models.CharField(max_length=200, blank=True, null=True)
     
 
     def __str__(self):

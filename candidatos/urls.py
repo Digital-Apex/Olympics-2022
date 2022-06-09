@@ -14,4 +14,6 @@ urlpatterns = [
     path('listar_propuesta/', view=ListPropuesta.as_view(), name='list_propuesta'),
     path('editar_propuesta/<int:pk>/', view=UpdatePropuesta.as_view(), name='update_propuesta'),
     path('eliminar_propuesta/<int:pk>/', view=DeletePropuesta.as_view(), name='delete_propuesta'),
+    
+    path('aumentar/<int:pk>/', view=aumentarVoto, name='votar'),
 ]

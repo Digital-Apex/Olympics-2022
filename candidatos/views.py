@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.views.generic import *
 
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from .forms import *
 
 
@@ -16,6 +17,7 @@ class CreateCandidato(CreateView):
 class ListCandidato(ListView):
     template_name = 'candidatos/list.html'
     model = CandidatoPresidente
+    context_object_name = 'candidatos'
     
 class UpdateCandidato(UpdateView):
     template_name = 'candidatos/update.html'
@@ -49,7 +51,11 @@ class DeletePropuesta(DeleteView):
     model = Propuestas
     success_url = reverse_lazy('candidatos:propuesta_list')
     
-    
+def aumentarVoto(request, pk):
+    candidato = CandidatoPresidente.objects.get(pk=pk)
+    candidato.votos += 1
+    candidato.save()
+    return redirect('candidatos:list')
 
     
 

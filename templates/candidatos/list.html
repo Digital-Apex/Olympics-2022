@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}LISTAR CANDIDATOS{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="col-md-12 d-flex align-items-center justify-content-center h-100">
+        {% for candidato in candidatos %}
+        <div class="card text-left">
+          <img class="card-img-top" src="holder.js/100px180/" alt="">
+          <div class="card-body">
+            <h4 class="card-title text-center">{{ candidato.nombre }} {{candidato.apellidos}}</h4>
+
+
+            <p class="text-center">Nombre: {{ candidato.nombre }} {{ candidato.apellidos }} </p>
+            <p class="text-center">Edad: {{ candidato.edad }} </p>
+            <p class="text-center">Cedula: {{ candidato.cedula }} </p>
+            <p class="text-center">Votos: {{ candidato.votos|default:0 }} </p>
+            <p class="text-center">Partido: {{ candidato.partido }} </p>
+            <p class="text-center">Profesion: {{ candidato.profesion }} </p>
+            
+            {% if candidato.url %}
+            <p class="text-center"> <a href="{{candidato.url}}" class="btn btn-info">VER SITIO</a></p>
+                
+            {% endif %}
+                
+            <a href="{% url 'candidatos:update' candidato.id %}" class="btn btn-primary">EDITAR</a>
+            <a href="{% url 'candidatos:delete' candidato.id %}" class="btn btn-danger">ELIMINAR</a>
+            <a href="{% url 'candidatos:votar' candidato.id %}" class="btn btn-warning">VOTAR</a>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="{% url 'candidatos:create' %}" class="btn btn-info">CREAR</a>
+    <a href="{% url 'candidatos:opciones' %}" class="btn btn-danger">VOLVER</a>
+</div>
+{% endblock content %}
