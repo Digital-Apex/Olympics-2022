@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block css %}
 
@@ -8,7 +9,15 @@
 
 {% block content %}
 <div class="container w-100 h-100 d-flex flex-column align-items-center justify-content-center">
-    
+    <h1>Menú</h1>
+    <img class="frame2-logo" src="{% static 'img/frame2.png' %}" alt="">
+    <div class="mt-4">
+        <a class="btn btn-primary" href="">Requisitos Para Votar</a>
+        <a class="btn btn-info" href="">Administrar Candidatos</a>
+        <a class="btn btn-success" href="">Votar Por Candidato</a>
+        <a class="btn btn-warning" href="">Solicitud Información Básica</a>
+    </div>
+    <a class="btn btn-danger mt-4" href="">Volver</a>
 </div>
 {% endblock content %}
 
