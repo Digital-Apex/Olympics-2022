@@ -8,7 +8,7 @@ from .forms import *
 
 # Create your views here.
 
-class CreateCandidato(TemplateView):
+class CreateCandidato(CreateView):
     template_name = 'candidatos/create.html'
     form_class = CandidatoForm
     success_url = reverse_lazy('candidatos:list')

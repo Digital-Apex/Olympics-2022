@@ -1,12 +1,12 @@
 from django import forms
 from .models import *
 
-class CandidatoForm(forms.Form):
-    class Meta():
+class CandidatoForm(forms.ModelForm):
+    class Meta:
         model = CandidatoPresidente
-        fields = '__all__'
+        fields = ['nombre','apellidos','edad','cedula','profesion', 'partido']
         
-class PropuestaForm(forms.Form):
-    class Meta():
+class PropuestaForm(forms.ModelForm):
+    class Meta:
         model = Propuestas
         fields = '__all__'
