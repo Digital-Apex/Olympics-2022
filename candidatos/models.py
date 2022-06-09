@@ -15,6 +15,9 @@ class CandidatoPresidente(models.Model):
     profesion = models.CharField(max_length=100)
     partido = models.CharField(max_length=100)
     url = models.CharField(max_length=200, blank=True, null=True)
+    propuesta_1 = models.CharField(max_length=200, blank=True, null=True)
+    propuesta_2 = models.CharField(max_length=200, blank=True, null=True)
+    propuesta_3 = models.CharField(max_length=200, blank=True, null=True)
     
 
     def __str__(self):
