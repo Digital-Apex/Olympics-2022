@@ -7,12 +7,12 @@
 {% block title %}{% endblock title %}
 
 {% block content %}
-<div class="main">
-    <div class="container w-100 d-flex flex-column align-items-center justify-content-center" style="align-items: center !important; height: 100vh">
+<div class="main d-flex flex-column align-items-center justify-content-center" style="align-items: center !important; height: 100vh">
+    <div class="box container d-flex flex-column align-items-center justify-content-center" style="align-items: center !important; width: 40%; height: 40%">
         <div class="form-group">
-            <label class="label" for="inputID" style="font-size: 1.3rem; font-weight: bold; color: white;">Número de Documento</label>
-            <input type="number" class="form-control" id="inputID" >
-            <small class="form-text" style="font-size: 0.8rem; color: white; ">El Número de documento para ingresar es del 123456789</small>
+            <label class="label" for="inputID" style="font-size: 1.3rem; font-weight: bold; color: rgb(0, 0, 0);">Número de Documento</label>
+            <input type="number" class="form-control" id="inputID">
+            <small class="form-text" style="font-size: 0.8rem; color: rgb(0, 0, 0); ">El Número de documento para ingresar es del 123456789</small>
             <button class="btn btn-success w-100" onclick="entrar()">Entrar</button>
         </div>
     </div>
@@ -25,6 +25,8 @@
         var id = document.getElementById('inputID').value;
         if(id == 123456789){
             window.location.href = '/candidatos/opciones/';
+        } else {
+            alert('El numero de documento no es correcto');
         }
     }
 </script>
